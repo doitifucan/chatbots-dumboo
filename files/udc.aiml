@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>I have no answer for that.</template>
+  </category>
+  <category>
+      <pattern>Hi</pattern>
+      <template>
+          <random>
+              <li>Hello</li>
+              <li>Hi There</li>
+              <li>Good to see you</li>
+          </random>
+           Todays date is, <date/>
+      </template>
+  </category>
+    <category>
+      <pattern>test</pattern>
+      <template>
+          <set name="name">
+          <random>
+              <li>Jane</li>
+              <li>Paul</li>
+              <li>Dumini</li>
+          </random>
+          </set>
+          The person i choose is <get name="name"/>
+      </template>
+  </category>
+    <category>
+      <pattern>think</pattern>
+      <template>
+          <think>
+          <set name="name">
+          <random>
+              <li>Jane</li>
+              <li>Paul</li>
+              <li>Dumini</li>
+          </random>
+          </set>
+        </think>          
+          The person i choose is <get name="name"/>
+      </template>
+  </category>  
+    <category>
+      <pattern>i ate a *</pattern>
+      <template>
+          That sounds yummy.
+          <think>
+          <set name="food"><star/></set>
+        </think>          
+      </template>
+  </category> 
+    <category>
+      <pattern>what favorite food i like</pattern>
+      <template>
+          well earlier you ate <get name="food"/>, Hence i think you like
+          <get name="food"/>
+      </template>
+  </category> 
+  
+  <category>
+      <pattern>Hello Bot</pattern>
+      <template>Hello There</template>
+  </category>
+  <category>
+      <pattern>Hello *</pattern>
+      <template>Hey there, Welcome</template>
+  </category>
+  <category>
+      <pattern>_ Bot</pattern>
+      <template>Hi, there</template>
+  </category>
+<category>
+    <pattern>My Name is * *</pattern>
+    <template>Hello,<star index="1"/>. How are you <star index="2"/></template>
+</category>
+<category>
+    <pattern>Say *</pattern>
+    <template><star index="1"/></template>
+</category>
+<category>
+    <pattern>My Name is *</pattern>
+    <template>Hello, <set name="name"><star index="1"/></set></template>
+</category>
+<category>
+    <pattern>what is my name</pattern>
+    <template>Your name is <get name="name"></get></template>
+</category>
+<category>
+    <pattern>Ask me a question</pattern>
+    <template>Do you like beach ride</template>
+</category>
+<category>
+    <pattern>Ask me another question</pattern>
+    <template>Do you like pizza</template>
+</category>
+<category>
+    <that>do you like *</that>
+    <pattern>yes</pattern>
+    <template>
+        thats good. what do you like best about <thatstar/>
+    </template>
+</category>
+</aiml>
